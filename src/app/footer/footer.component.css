@@ -1,0 +1,13 @@
+
+.bottomnav {
+    background-color: rgba(33, 1, 77, 0.99);
+    color: black;
+}
+.bottomnav button {
+    background-color: rgba(51, 5, 116, 0.99);
+    color: white;
+}
+.bottomnav button:hover {
+    background-color: rgba(16, 5, 32, 0.99);
+    color: green;
+}

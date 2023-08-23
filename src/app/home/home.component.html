@@ -1,0 +1,100 @@
+<!-- FILEPATH: c:\Users\mania\AngularWallet\Tokenwallet\src\app\home\home.component.html -->
+<div class="container py-5">
+    <div class="row justify-content-center py-5">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h1 class="mat-display-1 text-center">Welcome, {{username}}!</h1>
+                    <p class="py-2 balance">Balance: {{ tokens }}</p>
+                    <button mat-raised-button color="primary" (click)="openBuyTokensDialog()">Buy Tokens</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="mat-card">
+                <div class="mat-card-content">
+                    <p class="mat-body-1">TokenWallet is a simple web application that allows you to buy tokens for Car Washes, Coffee Shops, and other services.</p>
+                    <p class="mat-body-1">Use the tokens to pay for services at your favorite businesses.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center py-5">
+        <div class="col-md-8">
+            <div class="mat-card">
+                <div class="mat-card-content">
+                    <h2 class="mat-display-1 mb-5">Available Services</h2>
+                    <table class="table table-striped table-hover table-bordered table-responsive table-sm ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Service Name</th>
+                                <th scope="col">Accepted Payments</th>
+                                <th scope="col">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Food Delivery</td>
+                                <td>Tokens</td>
+                                <td>City Center</td>
+                            </tr>
+                            <tr>
+                                <td>Ride Sharing</td>
+                                <td>Tokens</td>
+                                <td>Suburb Area</td>
+                            </tr>
+                            <tr>
+                                <td>Grocery Shopping</td>
+                                <td>Tokens, PayPal</td>
+                                <td>Local Market</td>
+                            </tr>
+                            <tr>
+                                <td>Laundry Service</td>
+                                <td>Tokens</td>
+                                <td>Neighborhood</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center py-5">
+        <div class="col-md-8">
+            <div class="mat-card">
+                <div class="mat-card-content text-center">
+                    <h2 class="mat-display-1 mb-5">How to Use TokenWallet?</h2>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-4">
+                            <div class="step">
+                                <h3 class="mat-display-1">Step 1</h3>
+                                <p class="mat-body-1">Register for an Account to access TokenWallet's features. Provide your basic information and create a secure login.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="step">
+                                <h3 class="mat-display-1">Step 2</h3>
+                                <p class="mat-body-1">Purchase Tokens with ease using PayPal or your Credit Card. Tokens serve as the digital currency within TokenWallet.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="step">
+                                <h3 class="mat-display-1">Step 3</h3>
+                                <p class="mat-body-1">Utilize Tokens for Payment of Services. We support a variety of services that can be paid for using your tokens.</p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mat-body-1 py-3">Additionally, TokenWallet can automatically suggest and pay for nearby services based on your GPS location, adding even more convenience to your transactions.</p>
+                    <p class="mat-body-1 py-3">Created by K.P </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

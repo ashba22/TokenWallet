@@ -1,0 +1,65 @@
+.navbar {
+  background-color: #673AB7;
+  color: white;
+}
+
+.logo {
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-left: 1rem;
+  color: whitesmoke;
+}
+
+.logo:hover {
+  color: #FFEB3B;
+}
+
+.version {
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #673AB7;
+}
+
+.version:hover {
+  color: #FFEB3B;
+}
+
+.token-counter {
+  font-size: 1.5rem;
+  color: #1b85b0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-align: right;
+}
+
+.token-counter:hover {
+  color: #1f2961;
+}
+
+.nav-item {
+  font-size: 1rem;
+  color: #1b85b0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.icon-text {
+  vertical-align: middle;
+}
+
+.offcanvas-collapse.open {
+  transition: transform 0.3s ease-in;
+  transform: translateX(-100%);
+}
+
+.purplecanvas {
+  background-color: #673AB7;
+  color: white;
+  border: 3px solid white;
+}
+
+.purplecanvas a {
+  color: white;
+}

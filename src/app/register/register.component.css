@@ -1,0 +1,32 @@
+.register-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form-field {
+    margin-bottom: 16px;
+    width: 100% !important;
+}
+.gender-form {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+}
+
+.register-button {
+    align-self: flex-end;
+    width: 100% !important;
+}

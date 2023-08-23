@@ -1,0 +1,28 @@
+
+
+.step {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.step h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.bnlogin {
+    font-size: large;
+    font-weight: bold;
+}
+.balance {
+    font-size: large;
+    font-weight: bold;
+    color:green;
+}

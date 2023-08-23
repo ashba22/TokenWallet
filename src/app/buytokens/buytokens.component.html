@@ -1,0 +1,36 @@
+<mat-dialog-content>
+    <h1 mat-dialog-title>Buy Tokens</h1>
+   
+    <p mat-dialog-content>
+      <span class="text-center">1 token is equal to 1 USD</span>
+    </p>
+
+  
+    <form [formGroup]="buyForm" (ngSubmit)="onSubmit()">
+      <div class="text-center pb-2 pt-">
+        <mat-form-field>
+          <mat-label>Token Amount</mat-label>
+          <input matInput formControlName="tokenAmount" type="number" placeholder="Enter token amount">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Payment Method</mat-label>
+          <mat-select formControlName="paymentMethod">
+            <mat-option value="">Select Payment Method</mat-option>
+            <mat-option value="creditCard">Credit Card</mat-option>
+            <mat-option value="paypal">PayPal</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <section class="agree-section text-center">
+          <br>
+          <mat-checkbox formControlName="isAgreed">I agree to the terms and conditions</mat-checkbox>
+        </section>
+      </div>
+      <div mat-dialog-actions class="d-flex justify-content-between">
+        <button type="submit" mat-raised-button color="primary" cdkFocusInitial class="w1000">Buy</button>
+        <button mat-raised-button color="warn" (click)="onCancel()" class="btn btn-secondary">Cancel</button>
+      </div>
+    </form>
+  </mat-dialog-content>
+  

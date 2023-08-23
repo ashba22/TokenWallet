@@ -1,0 +1,20 @@
+
+
+<mat-dialog-content class="text-center">	
+  <button mat-icon-button class="close-button" (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <p mat-dialog-content>
+    <span class="text-center">Scan the QR code to pay</span>
+  </p>
+
+  <qrcode [qrdata]="qrString" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+
+  <p mat-dialog-content>
+    <span class="text-center">Or enter the following code manually</span>
+  </p>
+
+  <p mat-dialog-content>
+    <span class="text-center" style="color:blueviolet">{{qrString}}</span>
+  </p>
+</mat-dialog-content>
