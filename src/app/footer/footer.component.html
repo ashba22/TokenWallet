@@ -1,7 +1,7 @@
-<footer class="fixed-bottom">
+<footer class="fixed-bottom bg-purple border shadow">
     <div class="container d-flex justify-content-between align-items-center p-3 bottomnav" *ngIf="isLoggedIn()">
         <button mat-icon-button mat-button-rounded routerLink="/"><mat-icon>home</mat-icon></button>
-        <button mat-icon-button mat-button-rounded (click)="payClick()"><mat-icon>attach_money</mat-icon></button>
+        <button mat-icon-button mat-button-rounded (click)="payClick()"><mat-icon>qr_code</mat-icon></button>
         <button mat-icon-button mat-button-rounded routerLink="/login"><mat-icon>logout</mat-icon></button>
     </div>
 </footer>

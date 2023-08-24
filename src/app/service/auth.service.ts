@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable} from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private http:HttpClient) { 
 
   }
-  apiurl='http://89.116.247.182:3000/user';
+  apiurl='http://localhost:3000/user';
 
   registerUser(inputdata:any){
     return this.http.post(this.apiurl,inputdata)
@@ -22,12 +22,11 @@ export class AuthService {
   getAll(){
     return this.http.get(this.apiurl);
   }
-
   updateUser(id:any,inputdata:any){
     return this.http.put(this.apiurl+'/'+id,inputdata);
   }
   getUserRole(){
-    return this.http.get('http://89.116.247.182:3000/role')
+    return this.http.get('http://localhost:3000/role')
   }
   isLoggedIN(){
     return sessionStorage.getItem('username')!=null;
@@ -38,22 +37,19 @@ export class AuthService {
   getRole(){
     return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():'';
   }
-  getAllCustomer(){
-    return this.http.get('http://89.116.247.182:3000/customer');
-  }
   getAccessbyRole(role:any,menu:any){
-    return this.http.get('http://89.116.247.182:3000/roleaccess?role='+role+'&menu='+menu);
+    return this.http.get('http://localhost:3000/roleaccess?role='+role+'&menu='+menu);
   }
   getTokens(id:any){
-    return this.http.get('http://89.116.247.182:3000/user/'+id).pipe(
+    return this.http.get('http://localhost:3000/user/'+id).pipe(
       map((response: any) => response.tokens)
     );
   }
   addTokens(id: any, tokenAmount: any): Observable<any> {
     const updateData = { tokens: tokenAmount };
-    return this.http.patch('http://89.116.247.182:3000/user/' + id, updateData);
+    return this.http.patch('http://localhost:3000/user/' + id, updateData);
   }
-  
+
   logOut(){
     sessionStorage.clear();
   }

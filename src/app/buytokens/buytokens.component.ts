@@ -2,7 +2,6 @@
   import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   import { AuthService } from '../service/auth.service';
-  import { Observer } from 'rxjs';
   import { ToastrService } from 'ngx-toastr';
 
   @Component({
@@ -29,7 +28,7 @@
     }
 
     onSubmit(): void {
-      if (this.buyForm.valid) {
+      if (this.buyForm.valid && this.buyForm.dirty) {
         const { tokenAmount } = this.buyForm.value;
         const userId = sessionStorage.getItem('username');
         const tokenBalance$ = this.authService.getTokens(userId);
@@ -39,11 +38,13 @@
           addTokens$.subscribe(() => {
             this.dialogRef.close();
             this.toastr.success(`You have successfully bought ${tokenAmount} tokens`, 'Success');
+
           });
         });
       }
     }
-    onCancel(): void {
-      this.dialogRef.close();
+
+    onCancel() {
+      this.dialogRef.close()
     }
   }

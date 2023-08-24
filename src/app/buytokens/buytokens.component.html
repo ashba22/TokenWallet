@@ -1,11 +1,9 @@
 <mat-dialog-content>
     <h1 mat-dialog-title>Buy Tokens</h1>
-   
     <p mat-dialog-content>
       <span class="text-center">1 token is equal to 1 USD</span>
     </p>
 
-  
     <form [formGroup]="buyForm" (ngSubmit)="onSubmit()">
       <div class="text-center pb-2 pt-">
         <mat-form-field>
@@ -29,8 +27,7 @@
       </div>
       <div mat-dialog-actions class="d-flex justify-content-between">
         <button type="submit" mat-raised-button color="primary" cdkFocusInitial class="w1000">Buy</button>
-        <button mat-raised-button color="warn" (click)="onCancel()" class="btn btn-secondary">Cancel</button>
+        <button mat-raised-button mat-dialog-close color="warn">Close</button>
       </div>
     </form>
   </mat-dialog-content>
-  
