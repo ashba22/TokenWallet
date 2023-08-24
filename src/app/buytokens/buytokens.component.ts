@@ -31,19 +31,19 @@
       if (this.buyForm.valid && this.buyForm.dirty) {
         const { tokenAmount } = this.buyForm.value;
         const userId = sessionStorage.getItem('username');
-        const tokenBalance$ = this.authService.getTokens(userId);
-        tokenBalance$.subscribe(balance => {
-          const newBalance = balance + Number(tokenAmount);
-          const addTokens$ = this.authService.addTokens(userId, newBalance);
-          addTokens$.subscribe(() => {
-            this.dialogRef.close();
-            this.toastr.success(`You have successfully bought ${tokenAmount} tokens`, 'Success');
-          });
+        this.authService.getTokens(userId).subscribe({
+          next: balance => {
+            const newBalance = balance + Number(tokenAmount);
+            this.authService.addTokens(userId, newBalance).subscribe({
+              next: () => {
+                this.dialogRef.close();
+                this.toastr.success(`You have successfully bought ${tokenAmount} tokens`, 'Success');
+              },
+              error: error => this.toastr.error(`Error: ${error.message}`, 'Error')
+            });
+          },
+          error: error => this.toastr.error(`Error: ${error.message}`, 'Error')
         });
       }
-    }
-
-    onCancel(): void {
-      this.dialogRef.close()
     }
   }
