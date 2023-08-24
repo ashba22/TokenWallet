@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BuytokensComponent } from './buytokens/buytokens.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { PayqrcodeComponent } from './payqrcode/payqrcode.component';
+import { RemoveTokenComponent } from './remove-token/remove-token.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PayqrcodeComponent } from './payqrcode/payqrcode.component';
     UserComponent,
     FooterComponent,
     BuytokensComponent,
-    PayqrcodeComponent
+    PayqrcodeComponent,
+    RemoveTokenComponent
   ],
   imports: [
     BrowserModule,

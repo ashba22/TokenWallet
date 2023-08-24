@@ -3,7 +3,7 @@
   import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   import { AuthService } from '../service/auth.service';
   import { ToastrService } from 'ngx-toastr';
-
+  import { SharedTokenService } from '../service/shared-token.service';
   @Component({
     selector: 'app-buytokens',
     templateUrl: './buytokens.component.html',
@@ -38,13 +38,12 @@
           addTokens$.subscribe(() => {
             this.dialogRef.close();
             this.toastr.success(`You have successfully bought ${tokenAmount} tokens`, 'Success');
-
           });
         });
       }
     }
 
-    onCancel() {
+    onCancel(): void {
       this.dialogRef.close()
     }
   }

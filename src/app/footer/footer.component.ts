@@ -4,7 +4,9 @@
   import { MatDialog } from '@angular/material/dialog';
   import { ToastrService } from 'ngx-toastr';
   import { PayqrcodeComponent } from '../payqrcode/payqrcode.component';
-
+  import { SharedTokenService } from '../service/shared-token.service';
+  import { Observable } from 'rxjs';
+// impoet
   @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',
@@ -12,11 +14,13 @@
   })
   export class FooterComponent {
     username = localStorage.getItem('username');
-
+    tokens$!: Observable<number>;
     constructor(
       public service: AuthService,
       public dialog: MatDialog,
-      private toastr: ToastrService
+      private toastr: ToastrService,
+      private sharedTokenService: SharedTokenService
+
     ) {}
 
     // Open the pay QR code dialog
@@ -25,18 +29,10 @@
         width: '400px',
         data: { username: this.username } // Pass any data required by the dialog
       });
-
-      // Handle the dialog result
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('Dialog closed:', result);
-
-        // Update the tokens variable in the home component
-        const homeComponent = this.dialog.getDialogById('homeComponent');
-        if (homeComponent) {
-          homeComponent.componentInstance.tokens = this.service.getTokens(this.username);
-        }
-      });
+      
     }
+
+
 
 
     payClick(): void {

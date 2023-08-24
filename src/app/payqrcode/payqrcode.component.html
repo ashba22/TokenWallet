@@ -1,7 +1,7 @@
 
 
 <mat-dialog-content class="text-center">	
-  <button mat-icon-button class="close-button" (click)="closeDialog()">
+  <button mat-icon-button mat-dialog-close class="close-button" >
     <mat-icon>close</mat-icon>
   </button>
   <p mat-dialog-content>
@@ -16,5 +16,13 @@
 
   <p mat-dialog-content>
     <span class="text-center" style="color:blueviolet">{{qrString}}</span>
+  </p>
+
+  <p mat-dialog-content>
+    <span class="text-center">Simulate payment by clicking the button below</span>
+  </p>
+
+  <p>
+    <button mat-raised-button mat-dialog-close color="primary" type="submit" (click)="onSubmit()">Pay</button>
   </p>
 </mat-dialog-content>
