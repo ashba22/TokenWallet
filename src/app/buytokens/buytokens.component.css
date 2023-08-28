@@ -5,7 +5,11 @@
 .full-width {
     width: 100%;
 }
+.text-left {
+    text-align: left;
+}
 .mat-button-large {
     font-size: 20px;
-
+    width: 100%;
+    padding: auto;
 }

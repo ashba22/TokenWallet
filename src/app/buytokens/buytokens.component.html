@@ -1,30 +1,35 @@
 <mat-dialog-content>
-    <h1 mat-dialog-title>Buy Tokens</h1>
-    <form [formGroup]="buyForm" (ngSubmit)="onSubmit()" class="mobile-form">
-      
-      <div class="text-center">
-        <mat-form-field class="full-width">
-          <mat-label>Token Amount</mat-label>
-          <input matInput formControlName="tokenAmount" type="number" placeholder="">
-        </mat-form-field>
-  
-        <mat-form-field class="full-width">
-          <mat-label>Payment Method</mat-label>
-          <mat-select formControlName="paymentMethod">
-            <mat-option value="">Select Payment Method</mat-option>
-            <mat-option value="creditCard">Credit Card</mat-option>
-            <mat-option value="paypal">PayPal</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <section class="agree-section text-center">
-          <br>
+  <div class="d-flex justify-content-end">
+    <button mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <h1 class="text-center">Buy Tokens</h1>
+  <form [formGroup]="buyForm" (ngSubmit)="onSubmit()" class="mobile-form">
+    <div class="text-center">
+      <mat-form-field class="full-width">
+        <mat-label>Token Amount</mat-label>
+        <input matInput formControlName="tokenAmount" type="number" placeholder="">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Payment Method</mat-label>
+        <mat-select formControlName="paymentMethod">
+          <mat-option value="">Select Payment Method</mat-option>
+          <mat-option value="creditCard">Credit Card</mat-option>
+          <mat-option value="paypal">PayPal</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="text-left">
+        <mat-card-content>
           <mat-checkbox formControlName="isAgreed">I agree to the terms and conditions</mat-checkbox>
-        </section>
+        </mat-card-content>
       </div>
-      <div mat-dialog-actions class="d-flex justify-content-between">
-        <button type="submit" mat-raised-button color="primary" cdkFocusInitial class="mat-button-large">Buy</button>
-        <button mat-raised-button mat-dialog-close color="warn">Close</button>
-      </div>
-    </form>
-  </mat-dialog-content>
+    </div>
+
+    <div mat-dialog-actions class="d-flex justify-content-center mt-3">
+      <button type="submit" mat-raised-button color="primary" cdkFocusInitial class="mat-button-large">Buy</button>
+    </div>
+  </form>
+</mat-dialog-content>
