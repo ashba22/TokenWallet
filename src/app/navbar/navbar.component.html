@@ -14,12 +14,12 @@
         <div class="offcanvas-body">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item" *ngIf="isAdmin()">
-                    <a class="nav-link"  routerLink="/user" (click)="navbarToggler.click()">
+                    <a class="nav-link"  routerLink="/user" (click)="closeMobileMenu()">
                         ADMIN
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="isLoggedIn()">
-                    <a class="nav-link" (click)="logOut()" routerLink="/login">
+                    <a class="nav-link" (click)="logOut(); closeMobileMenu()" routerLink="/login">
                         LOGOUT
                     </a>
                 </li>

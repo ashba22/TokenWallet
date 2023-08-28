@@ -31,5 +31,10 @@ export class NavbarComponent {
   isAdmin(): boolean {
     return this.authService.isAdmin();
   }
+  closeMobileMenu(): void {
+    if (this.navbarNav.nativeElement.classList.contains('show')) {
+      this.navbarToggler.nativeElement.click();
+    }
+  }
   
 }

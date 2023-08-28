@@ -35,7 +35,7 @@ export class HomeComponent {
 
   openBuyTokensDialog(): void {
     const dialogRef = this.dialog.open(BuytokensComponent, {
-      width: '400px',
+      width: '420px',
       data: { username: this.username } 
     });
 

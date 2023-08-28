@@ -1,17 +1,14 @@
 <mat-dialog-content>
     <h1 mat-dialog-title>Buy Tokens</h1>
-    <p mat-dialog-content>
-      <span class="text-center">1 token is equal to 1 USD</span>
-    </p>
-
-    <form [formGroup]="buyForm" (ngSubmit)="onSubmit()">
-      <div class="text-center pb-2 pt-">
-        <mat-form-field>
+    <form [formGroup]="buyForm" (ngSubmit)="onSubmit()" class="mobile-form">
+      
+      <div class="text-center">
+        <mat-form-field class="full-width">
           <mat-label>Token Amount</mat-label>
-          <input matInput formControlName="tokenAmount" type="number" placeholder="Enter token amount">
+          <input matInput formControlName="tokenAmount" type="number" placeholder="">
         </mat-form-field>
   
-        <mat-form-field>
+        <mat-form-field class="full-width">
           <mat-label>Payment Method</mat-label>
           <mat-select formControlName="paymentMethod">
             <mat-option value="">Select Payment Method</mat-option>
@@ -26,7 +23,7 @@
         </section>
       </div>
       <div mat-dialog-actions class="d-flex justify-content-between">
-        <button type="submit" mat-raised-button color="primary" cdkFocusInitial class="w1000">Buy</button>
+        <button type="submit" mat-raised-button color="primary" cdkFocusInitial class="mat-button-large">Buy</button>
         <button mat-raised-button mat-dialog-close color="warn">Close</button>
       </div>
     </form>
