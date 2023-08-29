@@ -18,6 +18,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { PayqrcodeComponent } from './payqrcode/payqrcode.component';
 import { RemoveTokenComponent } from './remove-token/remove-token.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -41,13 +42,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HttpClientModule,
     ToastrModule.forRoot(),
     QRCodeModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
+    // TODO Enviorment configurieren und ServiceWorker aktivieren nur im Prod Modus
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true, registrationStrategy: 'registerImmediately' }),
+
+
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
