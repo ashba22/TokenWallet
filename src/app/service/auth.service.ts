@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable} from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +11,10 @@ export class AuthService {
   constructor(private http:HttpClient) { 
 
   }
+
+
+ 
+
   apiurl='http://localhost:3000/user';
 
   registerUser(inputdata:any){
@@ -53,14 +56,11 @@ export class AuthService {
   }
 
   removeTokens(id: any, tokenAmount: any): Observable<any> {
-    return this.getTokens(id).pipe(
-      switchMap((tokens: any) => {
-        const updatedTokens = tokens - tokenAmount;
-        const updateData = { tokens: updatedTokens };
-        return this.http.patch('http://localhost:3000/user/' + id, updateData);
-      })
-    );
+    const updateData = { tokens: tokenAmount };
+    return this.http.patch('http://localhost:3000/user/' + id, updateData);
   }
+
+
 
   logOut(){
     sessionStorage.clear();

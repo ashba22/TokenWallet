@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { SharedTokenService } from '../service/shared-token.service';
 @Component({
   selector: 'app-remove-token',
   templateUrl: './remove-token.component.html',
@@ -10,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class RemoveTokenComponent {
   id: string = '';
 
-  constructor(private route: ActivatedRoute, private authService: AuthService, private toastr: ToastrService) {
+  constructor(private route: ActivatedRoute, private authService: AuthService, private toastr: ToastrService, private sharedTokenService: SharedTokenService) {
 
     this.route.params.subscribe(params => {
       this.id = params['id'];
@@ -18,12 +19,10 @@ export class RemoveTokenComponent {
     authService.getTokens(this.id).subscribe((data: any) => {
       /// if user dont have enough tokens to remove then redirect to home page
       if (data.tokens < 1) {
-        window.location.href = '/';
         toastr.error('You dont have enough tokens to remove', 'Error');
       }
       else {
-        authService.removeTokens(this.id, 1).subscribe((data: any) => {
-          window.location.href = '/';
+        this.authService.removeTokens(this.id, data.tokens - 1).subscribe((data: any) => {
           toastr.success('You have successfully removed 1 token', 'Success');
         });
       }

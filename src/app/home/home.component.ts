@@ -30,9 +30,6 @@ export class HomeComponent {
   }
 
 
-
-
-
   openBuyTokensDialog(): void {
     const dialogRef = this.dialog.open(BuytokensComponent, {
       width: '420px',

@@ -27,23 +27,26 @@
       });
     }
 
-    onSubmit(): void {
-      if (this.buyForm.valid && this.buyForm.dirty) {
-        const { tokenAmount } = this.buyForm.value;
-        const userId = sessionStorage.getItem('username');
-        this.authService.getTokens(userId).subscribe({
-          next: balance => {
-            const newBalance = balance + Number(tokenAmount);
-            this.authService.addTokens(userId, newBalance).subscribe({
-              next: () => {
-                this.dialogRef.close();
-                this.toastr.success(`You have successfully bought ${tokenAmount} tokens`, 'Success');
-              },
-              error: error => this.toastr.error(`Error: ${error.message}`, 'Error')
-            });
-          },
-          error: error => this.toastr.error(`Error: ${error.message}`, 'Error')
-        });
+      onSubmit(): void {
+        if (this.buyForm.valid && this.buyForm.dirty) {
+          const { tokenAmount } = this.buyForm.value;
+          const userId = sessionStorage.getItem('username');
+          this.authService.getTokens(userId).subscribe({
+            next: balance => {
+              const newBalance = balance + Number(tokenAmount);
+              this.authService.addTokens(userId, newBalance).subscribe({
+                next: () => {
+                  this.dialogRef.close();
+                  const tokenAmount = this.buyForm.value.tokenAmount;
+                  this.toastr.success(`You have successfully bought ${tokenAmount} tokens`, 'Success');
+                },
+                error: error => this.toastr.error(`Error: ${error.message}`, 'Error')
+              });
+            },
+
+            error: error => this.toastr.error(`Error: ${error.message}`, 'Error')
+          });
+        }
       }
     }
-  }
+    

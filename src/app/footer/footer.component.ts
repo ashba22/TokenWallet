@@ -33,8 +33,6 @@
     }
 
 
-
-
     payClick(): void {
       if (this.dialog.openDialogs.length > 0) {
         this.toastr.warning('Close current QR code before generating a new one.');
