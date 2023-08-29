@@ -2,6 +2,10 @@
 
 This project was created to learn Angular. It is a simple digital wallet application that allows users to manage their tokens.
 
+## TODO 29.08
+- Convert the application to a Progressive Web App (PWA) to provide a better user experience and allow users to access the app offline.
+- Create a service worker to cache the app's assets and improve performance.
+
 ## 🚀 Technologies Used
 
 - Angular
@@ -10,17 +14,7 @@ This project was created to learn Angular. It is a simple digital wallet applica
 - CSS
 - JSON Server
 
-## 🛠️ Getting Started
-
-To get started with this project, follow these steps:
-
-1. Clone the repository to your local machine
-2. Install the necessary dependencies by running `npm install`
-3. Start the development server by running `ng serve`
-4. Start the backend server by running `json-server`
-5. Navigate to `http://localhost:4200/` to view the application
-
-## 🌐 Live Demo (will be offline soon - cause running development server is unsafe 😅)
+## 🌐 Live Demo 
 
 You can access an online demo of this application at http://89.116.247.182:4200
 
@@ -34,4 +28,4 @@ Alternatively, you can create a new account to explore the application.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
