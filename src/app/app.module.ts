@@ -42,7 +42,7 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     ToastrModule.forRoot(),
     QRCodeModule,
-    // TODO Enviorment configurieren und ServiceWorker aktivieren nur im Prod Modus
+    // TODO Enviorment configurieren und ServiceWorker aktivieren nur im Prod Modus oder isDevMode
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: true, registrationStrategy: 'registerImmediately' }),
 
 

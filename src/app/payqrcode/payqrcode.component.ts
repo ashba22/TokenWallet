@@ -3,7 +3,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../service/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { SharedTokenService } from '../service/shared-token.service';
-import { Subject } from 'rxjs';
 
   @Component({
     selector: 'app-payqrcode',

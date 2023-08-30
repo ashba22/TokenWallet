@@ -6,17 +6,11 @@ This project was created to learn Angular. It is a simple digital wallet applica
 - Convert the application to a Progressive Web App (PWA) to provide a better user experience and allow users to access the app offline.
 - Create a service worker to cache the app's assets and improve performance.
 
-## 🚀 Technologies Used
-
-- Angular
-- TypeScript
-- HTML
-- CSS
-- JSON Server
-
 ## 🌐 Live Demo 
 
-You can access an online demo of this application at http://89.116.247.182:4200
+You can access an online demo of this application at https://www.pokecomet.net/
+
+Json Server API at https://api.pokecomet.net/
 
 Please note that this is a public demo and may be subject to changes or interruptions. 
 
@@ -25,6 +19,18 @@ To access the demo, you can log in with the following credentials:
 - Password: user
 
 Alternatively, you can create a new account to explore the application.
+
+
+## 🚀 Technologies Used
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- JSON Server
+- Nginx
+
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
